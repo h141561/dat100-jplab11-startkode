@@ -12,8 +12,7 @@ public class HtmlBlogg extends Blogg {
 	}
 	
 	private static String HTMLPREFIX = 
-			"<html>\n\t<head>\n\t\t<title>DAT100 Blogg</title>\n\t</head>\n\t<body>\n"
-			+ "<form><label for = fname\">First Name:</label><br><input type=\"text\" id=\"fname\" name=\"fname><br></form>";
+			"<html>\n\t<head>\n\t\t<title>DAT100 Blogg</title>\n\t</head>\n\t<body>\n";
 	
 	private static String HTMLPOSTFIX = 
 			"\t</body>\n</html>";

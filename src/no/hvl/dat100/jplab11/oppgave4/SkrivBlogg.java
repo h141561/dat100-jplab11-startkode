@@ -32,6 +32,7 @@ public class SkrivBlogg {
 					output += ("\t<tekst>" + i.getText() + "</tekst>\n");
 					output += ("\t<type>" + "TEKST" + "</type>\n");
 				}
+				
 				if(i instanceof Bilde)
 				{
 					output += ("\t<bilde>" + i.getUrl() + "</bilde>\n");
