@@ -1,77 +1,101 @@
 package no.hvl.dat100.jplab11.oppgave1;
 
 import no.hvl.dat100.jplab11.common.TODO;
+import no.hvl.dat100.jplab11.oppgave2.Bilde;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	private int m_id;
+	private int m_likes;
+	private String m_brukar;
+	private String m_dato;
+	protected String m_tekst;
 	
 	public Innlegg() {
 		
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.m_id = id;
+		this.m_brukar = bruker;
+		this.m_dato = dato;
+		this.m_likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.m_id = id;
+		this.m_brukar = bruker;
+		this.m_dato = dato;
+		this.m_likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.m_brukar;
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.m_brukar = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return this.m_dato;		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.m_dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.m_id;
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.m_likes;
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		this.m_likes++;
 	}
 	
+	public String getTekst() {
+		return m_tekst;
+	}
+	public String getText() {
+		return getTekst();
+	}
+	public abstract String getUrl();
+	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return m_id == innlegg.getId();
 	}
 	
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		String ret = 
+				Integer.toString(m_id) +
+				"\n" +
+				m_brukar +
+				"\n" +
+				m_dato +
+				"\n" +
+				m_likes +
+				"\n";
+		return ret;
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
+		String ret = "";
+		int tabs = 3;
+		String tabbar = "\t";
+		tabbar.repeat(tabs);
+
 		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		ret =
+			tabbar + "<h2>" + this.getBruker() + "@" + this.getDato() + " [" + this.getLikes() + "]</h2>\n" + 
+			tabbar + "<p>" + this.getText() + "</p>\n" ;
+		return ret;
+		
 	}
 }

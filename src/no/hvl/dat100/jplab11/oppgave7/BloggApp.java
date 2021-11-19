@@ -29,6 +29,7 @@ public class BloggApp {
 
 		HtmlBlogg samling = new HtmlBlogg();
 
+	
 		samling.leggTil(innlegg1);
 		samling.leggTil(innlegg2);
 
